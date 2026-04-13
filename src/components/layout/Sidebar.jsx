@@ -3,6 +3,7 @@ import * as Icons from 'lucide-react'
 import { LogOut } from 'lucide-react'
 import menuConfig from '../../config/menu.json'
 import appConfig from '../../config/app.json'
+import { useAdminAuth } from '../../context/AuthContext'
 
 function Icon({ name, ...props }) {
   const Cmp = Icons[name] || Icons.Circle
@@ -11,10 +12,12 @@ function Icon({ name, ...props }) {
 
 export default function Sidebar({ isOpen, onClose }) {
   const navigate = useNavigate()
+  const { logout } = useAdminAuth()
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
     if (window.confirm('Are you sure you want to log out?')) {
-      navigate('/')
+      await logout()
+      navigate('/login')
     }
   }
 

@@ -551,3 +551,213 @@
   .btn { padding: 10px 14px; font-size: 12px; }
   .admin-main-content { padding: 12px; }
 }
+
+
+/* ===================================================================
+   ADMIN AUTH PAGES
+   =================================================================== */
+.admin-auth-page {
+  display: flex;
+  min-height: 100vh;
+}
+.admin-auth-left {
+  flex: 0 0 42%;
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(26,22,37,0.92) 0%, rgba(26,22,37,0.97) 100%),
+    url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800') center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+.admin-auth-left-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.4) 100%);
+}
+.admin-auth-left-content {
+  position: relative;
+  z-index: 1;
+  padding: 48px 40px;
+  color: #fff;
+}
+.admin-auth-left-content h2 {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+.admin-auth-left-content p {
+  font-size: 14px;
+  opacity: 0.8;
+  line-height: 1.7;
+  max-width: 360px;
+}
+.admin-auth-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: #fff;
+}
+.admin-auth-form {
+  width: 100%;
+  max-width: 400px;
+}
+.admin-auth-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+}
+.admin-auth-logo-icon {
+  width: 48px;
+  height: 48px;
+  background: #1a1625;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.admin-auth-logo-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1625;
+}
+.admin-auth-form h1 {
+  font-size: 26px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 6px;
+  color: #1a1625;
+}
+.admin-auth-subtitle {
+  text-align: center;
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 28px;
+}
+.admin-auth-field {
+  margin-bottom: 18px;
+}
+.admin-auth-field label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #1a1625;
+}
+.admin-auth-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.admin-auth-input-icon {
+  position: absolute;
+  left: 14px;
+  color: #9ca3af;
+  pointer-events: none;
+}
+.admin-auth-input-wrapper input {
+  width: 100%;
+  padding: 12px 14px 12px 42px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1a1625;
+  transition: border-color 0.2s;
+  background: #fff;
+}
+.admin-auth-input-wrapper input:focus {
+  border-color: #C8102E;
+  box-shadow: 0 0 0 3px rgba(200,16,46,0.08);
+  outline: none;
+}
+.admin-auth-input-wrapper input::placeholder {
+  color: #9ca3af;
+}
+.admin-auth-forgot {
+  display: block;
+  text-align: right;
+  color: #C8102E;
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 8px;
+  text-decoration: none;
+}
+.admin-auth-forgot:hover { text-decoration: underline; }
+.admin-auth-error {
+  color: #C8102E;
+  font-size: 13px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+.admin-auth-submit {
+  width: 100%;
+  padding: 14px;
+  background: #C8102E;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.admin-auth-submit:hover { background: #a02a1a; }
+.admin-auth-submit:disabled { opacity: 0.7; cursor: not-allowed; }
+.admin-auth-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #6b7280;
+  text-decoration: none;
+}
+.admin-auth-back:hover { color: #1a1625; }
+.admin-auth-success {
+  text-align: center;
+}
+.admin-auth-success-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #eff6ff;
+  color: #2563eb;
+}
+.admin-auth-hint {
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 12px;
+}
+.admin-auth-link-btn {
+  background: none;
+  border: none;
+  color: #C8102E;
+  font-weight: 600;
+  font-size: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .admin-auth-left { display: none; }
+  .admin-auth-right { padding: 24px 16px; }
+  .admin-auth-form { max-width: 100%; }
+}

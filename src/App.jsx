@@ -1,5 +1,10 @@
 import { Routes, Route } from 'react-router-dom'
+import { AdminAuthProvider } from './context/AuthContext'
+import ProtectedRoute from './components/common/ProtectedRoute'
 import AdminLayout from './components/layout/AdminLayout'
+import LoginPage from './pages/LoginPage'
+import ForgotPasswordPage from './pages/ForgotPasswordPage'
+import ResetPasswordPage from './pages/ResetPasswordPage'
 import DashboardPage from './pages/DashboardPage'
 import ProductsPage from './pages/ProductsPage'
 import ProductViewPage from './pages/ProductViewPage'
@@ -27,34 +32,42 @@ import './App.css'
 
 function App() {
   return (
-    <Routes>
-      <Route element={<AdminLayout />}>
-        <Route path="/" element={<DashboardPage />} />
-        <Route path="/products" element={<ProductsPage />} />
-        <Route path="/products/:id" element={<ProductViewPage />} />
-        <Route path="/products/new" element={<AddProductPage />} />
-        <Route path="/products/edit/:id" element={<AddProductPage />} />
-        <Route path="/inventory" element={<InventoryPage />} />
-        <Route path="/inventory/:id" element={<InventoryDetailPage />} />
-        <Route path="/orders" element={<OrdersPage />} />
-        <Route path="/orders/:id" element={<OrderDetailPage />} />
-        <Route path="/orders/manual" element={<ManualOrderPage />} />
-        <Route path="/pricing" element={<PricingPage />} />
-        <Route path="/pricing/new" element={<CreatePricingRulePage />} />
-        <Route path="/crm" element={<CRMPage />} />
-        <Route path="/crm/:id" element={<CustomerDetailPage />} />
-        <Route path="/cms" element={<CMSPage />} />
-        <Route path="/suppliers" element={<SuppliersPage />} />
-        <Route path="/suppliers/:id" element={<SupplierDetailPage />} />
-        <Route path="/marketing" element={<MarketingPage />} />
-        <Route path="/marketing/campaign/new" element={<CreateCampaignPage />} />
-        <Route path="/ai-insights" element={<AIInsightsPage />} />
-        <Route path="/user-roles" element={<UserRolesPage />} />
-        <Route path="/stripe" element={<StripeConnectPage />} />
-        <Route path="/notifications" element={<NotificationsPage />} />
-        <Route path="/settings" element={<SettingsPage />} />
-      </Route>
-    </Routes>
+    <AdminAuthProvider>
+      <Routes>
+        {/* Auth routes (no layout) */}
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+        <Route path="/reset-password" element={<ResetPasswordPage />} />
+
+        {/* Protected admin routes */}
+        <Route element={<ProtectedRoute><AdminLayout /></ProtectedRoute>}>
+          <Route path="/" element={<DashboardPage />} />
+          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/products/:id" element={<ProductViewPage />} />
+          <Route path="/products/new" element={<AddProductPage />} />
+          <Route path="/products/edit/:id" element={<AddProductPage />} />
+          <Route path="/inventory" element={<InventoryPage />} />
+          <Route path="/inventory/:id" element={<InventoryDetailPage />} />
+          <Route path="/orders" element={<OrdersPage />} />
+          <Route path="/orders/:id" element={<OrderDetailPage />} />
+          <Route path="/orders/manual" element={<ManualOrderPage />} />
+          <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/pricing/new" element={<CreatePricingRulePage />} />
+          <Route path="/crm" element={<CRMPage />} />
+          <Route path="/crm/:id" element={<CustomerDetailPage />} />
+          <Route path="/cms" element={<CMSPage />} />
+          <Route path="/suppliers" element={<SuppliersPage />} />
+          <Route path="/suppliers/:id" element={<SupplierDetailPage />} />
+          <Route path="/marketing" element={<MarketingPage />} />
+          <Route path="/marketing/campaign/new" element={<CreateCampaignPage />} />
+          <Route path="/ai-insights" element={<AIInsightsPage />} />
+          <Route path="/user-roles" element={<UserRolesPage />} />
+          <Route path="/stripe" element={<StripeConnectPage />} />
+          <Route path="/notifications" element={<NotificationsPage />} />
+          <Route path="/settings" element={<SettingsPage />} />
+        </Route>
+      </Routes>
+    </AdminAuthProvider>
   )
 }
 
