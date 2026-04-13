@@ -1,0 +1,12 @@
+{
+  "appName": "China Sky",
+  "appSubtitle": "Supermarket",
+  "currency": "₦",
+  "currencyCode": "NGN",
+  "locale": "en-NG",
+  "apiBaseUrl": "/api",
+  "useMockData": true,
+  "pagination": {
+    "defaultPageSize": 10
+  }
+}

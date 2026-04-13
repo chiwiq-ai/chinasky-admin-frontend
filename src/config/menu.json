@@ -1,0 +1,19 @@
+{
+  "main": [
+    { "path": "/", "label": "Dashboard", "icon": "LayoutDashboard" },
+    { "path": "/products", "label": "Products", "icon": "Package" },
+    { "path": "/inventory", "label": "Inventory", "icon": "Warehouse" },
+    { "path": "/orders", "label": "Orders", "icon": "ShoppingCart" },
+    { "path": "/pricing", "label": "Pricing", "icon": "Tag" },
+    { "path": "/crm", "label": "CRM", "icon": "Users" },
+    { "path": "/cms", "label": "CMS", "icon": "Layout" },
+    { "path": "/suppliers", "label": "Suppliers", "icon": "Truck" },
+    { "path": "/marketing", "label": "Marketing", "icon": "Megaphone" },
+    { "path": "/ai-insights", "label": "AI Insights", "icon": "Brain" },
+    { "path": "/user-roles", "label": "User Roles", "icon": "UserCog" },
+    { "path": "/stripe", "label": "Stripe Connect", "icon": "CreditCard" }
+  ],
+  "bottom": [
+    { "path": "/settings", "label": "Settings", "icon": "Settings" }
+  ]
+}
